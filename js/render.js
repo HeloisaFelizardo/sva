@@ -116,7 +116,7 @@ getWeatherForecast(latitude, longitude)
                 ${data.weather[0].description}">
         </li>
         <li class="alert">       
-          <a href="#map">
+          <a href="#alert">
             <img src="images/icons/danger.gif" class="icon-alert" alt="Icone de atenção" title="Alerta de alagamentos">    
           </a>
         </li>
