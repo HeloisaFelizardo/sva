@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SVA - Sistema de Vigilância de Alagamentos</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+    <header class="container">
+        <h1 class="logo"><img src="images/logo.jpg" alt="SVA"></h1>
+        <div class="clima"></div>
+        <!-- <nav>
+            <ul>
+                <li><a href="#map">Monitoramento em tempo real </a></li>
+            </ul>
+        </nav> -->
+    </header>
+    <main class="container">
+        <section class="intro">
+            <h1>Monitoramento em Tempo Real</h1>
+            <p>Mantenha-se um passo à frente das condições meteorológicas com nosso sistema de alerta de chuvas
+                intensas. Monitoramos
+                continuamente as condições climáticas e hidrológicas, proporcionando alertas e notificações em tempo
+                real diretamente
+                para você. Esteja sempre informado e preparado para agir, protegendo sua propriedade e comunidade.</p>
+            <h2>Recursos:</h2>
+            <ul>
+                <li>Alertas em tempo real sobre chuvas intensas em sua região.</li>
+                <li>Identificação dos pontos críticos de alagamento no mapa abaixo.</li>
+                <li>Dicas e medidas preventivas para proteger sua propriedade e comunidade durante eventos de chuva
+                    intensa.</li>
+            </ul>
+            <p><strong>O que é importante. Fique seguro, fique informado.</strong></p>
+        </section>
+        <section class="mapa">
+            <div class="table-responsive"></div>
+            <div id="map"></div>
+            <ul>
+                <li>
+                    <img src="images/icons/icon-danger.png" width="40" height="40" alt="Icone de atenção">
+
+                </li>
+                <li>Risco de alagamentos</li>
+            </ul>
+        </section>
+        <section class="extreme">
+            <h2>Aviso de Acumulado de Chuva. Severidade Grau: Extremo</h2>
+            <p>
+                Ao receber alertas sobre chuvas intensas, você poderá evitar situações de risco, como enchentes e
+                deslizamentos de terra. O Alerta de Chuvas Intensas ajuda a proteger você, sua família e seus
+                bens,mantendo-o informado e preparado para qualquer eventualidade.
+            </p>
+            <p>
+                Chuva superior a 60 mm/h ou acima de 100 mm/dia. Grande risco de grandes alagamentos e transbordamentos
+                de rios, grandes
+                deslizamentos de encostas, em cidades com tais áreas de risco.
+            </p>
+            <p>
+                Desligue aparelhos elétricos, quadro geral de energia. Observe alteração nas encostas. Permaneça em
+                local abrigado. Em caso de situação de inundação, ou similar, proteja seus pertences da água envoltos em
+                sacos plásticos.
+                Obtenha mais informações junto à Defesa Civil (telefone 199) e ao Corpo de Bombeiros (telefone 193).
+            </p>
+        </section>
+        <section class="severe">
+            <h2>Aviso de Chuvas Intensas. Severidade Grau: Severo</h2>
+            <p>
+                Ao receber alertas sobre chuvas intensas, você poderá evitar situações de risco, como enchentes e
+                deslizamentos de terra. O Alerta de Chuvas Intensas ajuda a proteger você, sua família e seus
+                bens,mantendo-o informado e preparado para qualquer eventualidade.
+            </p>
+            <p>
+                Chuva entre 30 e 60 mm/h ou 50 e 100 mm/dia, ventos intensos (60-100 km/h). Risco de corte de energia
+                elétrica, queda de galhos de árvores, alagamentos e de descargas elétricas.
+            </p>
+            <p>
+                Em caso de rajadas de vento: (não se abrigue debaixo de árvores, pois há risco de queda e descargas
+                elétricas e não estacione veículos próximos a torres de transmissão e placas de propaganda) Se possível,
+                desligue aparelhos elétricos e quadro geral de energia. Obtenha mais informações junto à Defesa Civil
+                (telefone 199) e ao Corpo de Bombeiros (telefone 193).
+            </p>
+        </section>
+    </main>
+    <footer class="container">
+        <p>Copyright © 2024 Sistema de Vigilância de Alagamentos |
+            <a href="https://leafletjs.com/" target="_blank">leafletjs.com</a>
+            | <a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>
+        </p>
+    </footer>
+</body>
+<script type="module" src="js/map.js"></script>
+<script type="module" src="js/api.js"></script>
+<script type="module" src="js/render.js"></script>
+
+</html>

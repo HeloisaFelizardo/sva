@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>SVA - Sistema de Vigilância de Alagamentos</title>
+    <link rel="shortcut icon" href="images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+    <header class="container">
+        <h1 class="logo"><img src="images/logo.jpg" alt="SVA"></h1>
+        <ul class="clima">
+            <li>Fazendinha</li>
+            <li>24º C</li>
+            <li><img src="images/icons/teste.png" alt="" title=""> </li>
+            <li class="alert"><img src="images/icons/danger.gif" alt="Icone de atenção"></li>
+        </ul>
+        <nav>
+            <ul>
+                <li><a href="#mapa">Monitoramento em tempo real </a></li>
+                <li><a href="#alertas">Alertas e notifições</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="container">
+        <section class="intro">
+            <div>
+                <h1 class="title">Proteja sua região com o sistema de vigilância de alagamentos e alerta de chuvas
+                    intensas
+                </h1>
+                <p>Tenha tranquilidade e segurança com o sistema de vigilância de alagamentos SVA.</p>
+            </div>
+            <div><img src="images/header.jpg"
+                    alt="Imagem de uma mulher calçando botas dentro de uma área de alagamento">
+            </div>
+        </section>
+        <section id="mapa">
+            <h1>Monitoramento em Tempo Real</h1>
+            <p>Nosso sistema avançado monitora constantemente as condiçoes climáticas e hidrológicas, fornecendo alertas
+                precisos e notificações em tempo real sobre possíveis alagamentos. Mantenha-se informado e tome medidas
+                preventivas para proteger sua propriedade e comunidade. Logo abaixo no mapa estão os marcados os pontos
+                criticos de alagamento, que devem ser evitados em caso de chuvas intensas.</p>
+            <div class="table-responsive"></div>
+            <div id="map"></div>
+            <ul>
+                <li>
+                    <img src="images/icons/icon-danger.png" width="40" height="40" alt="Icone de atenção">
+
+                </li>
+                <li>Risco de alagamentos</li>
+            </ul>
+        </section>
+        <section id="info">
+            <div>
+                <aside>
+                    <h3>Evite situações de risco</h3>
+                    <p>Ao receber alertas sobre chuvas intensas, você poderá evitar situações de risco, como enchentes e
+                        deslizamentos de terra. O Alerta de Chuvas Intensas ajuda a proteger você, sua família e seus
+                        bens,mantendo-o informado e preparado para qualquer eventualidade.
+                    </p>
+                </aside>
+
+                <figure>
+                    <img src="/images/image-1.jpg"
+                        alt="Imagem de um vidro de carro no trânsito à noite com gotas de chuva">
+                </figure>
+            </div>
+            <div>
+                <figure>
+                    <img src="images/image-2.jpg" alt="Imagem de chuva caindo num batente de madeira">
+                </figure>
+                <aside>
+                    <h3>Tenha tranquilidade em dias chuvosos</h3>
+                    <p>Com o Alerta de Chuvas Intensas, você terá tranquilidade em dias chuvosos, sabendo que está
+                        recebendo
+                        informações atualizadas e confiáveis sobre as condições climáticas. Assim, você poderá planejar
+                        suas
+                        atividades com antecedência e evitar surpresas desagradáveis.
+                    </p>
+                </aside>
+            </div>
+        </section>
+        <section id="alertas">
+            <h1>Receba alertas em tempo real sobre <br> chuvas intensas </h1>
+            <p>Proteja-se e esteja preparado para qualquer eventualidade com o Alerta de Chuvas Intensas.</p>
+            <div>
+                <figure><img src="images/image-3.jpg" alt="Imagem de chuva em um campo verde"></figure>
+                <aside>
+                    <h3>Fique informado sobre chuvas intensas</h3>
+                    <p>Com o Alerta de Chuvas Intensas, você receberá notificações em tempo real sobre chuvas intensas
+                        na
+                        sua região. Assim, você poderá se preparar adequadamente e tomar as medidas necessárias para
+                        garantir sua segurança.</p>
+                </aside>
+
+            </div>
+            <img src="https://openweathermap.org/img/wn/.png" alt="">
+        </section>
+    </main>
+    <footer class="container">
+        <p>Copyright © 2024 Sistema de Vigilância de Alagamentos |
+            <a href="https://leafletjs.com/" target="_blank">leafletjs.com</a>
+            | <a href="https://openweathermap.org/" target="_blank">openweathermap.org</a>
+        </p>
+    </footer>
+</body>
+<script type="module" src="js/map.js"></script>
+<script type="module" src="js/api.js"></script>
+<script type="module" src="js/render.js"></script>
+
+</html>

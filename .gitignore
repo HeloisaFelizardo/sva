@@ -1,0 +1,9 @@
+
+# Arquivos ou pastas gerados automaticamente
+node_modules/
+.sass-cache/
+*.css.map
+*.scssc
+
+# Arquivos de configuração específicos do usuário
+.DS_Store

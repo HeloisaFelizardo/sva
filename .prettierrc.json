@@ -1,0 +1,15 @@
+{
+	"trailingComma": "es5",
+	"tabWidth": 2,
+	"useTabs": false,
+	"semi": true,
+	"singleQuote": true,
+	"bracketSpacing": true,
+	"arrowParens": "avoid",
+	"css-modules-scope-behavior": "allow-any",
+	"scssSyntax": "scss",
+	"endOfLine": "lf",
+	"insertPragma": false,
+	"requirePragma": false,
+	"singleAttributePerLine": true
+}
