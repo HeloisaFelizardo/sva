@@ -2,12 +2,15 @@ import { getLocation } from './geolocation.js';
 import { getWeatherForecast } from './api.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  const map = L.map('map').addLayer(
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      attribution:
-        '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-    })
-  );
+  const map = L.map('map')
+    .addLayer(
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        fullscreenControl: true,
+        attribution:
+          '© <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+      })
+    )
+    .addControl(new L.Control.Fullscreen());
 
   getLocation(map)
     .then(location => {
