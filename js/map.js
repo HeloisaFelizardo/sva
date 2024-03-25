@@ -2,7 +2,7 @@
 let map;
 
 document.addEventListener('DOMContentLoaded', () => {
-  map = L.map('map').setView([-22.674835987730578, -42.007107264842624], 16);
+  map = L.map('map');
 
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution:
