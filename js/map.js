@@ -9,8 +9,6 @@ document.addEventListener('DOMContentLoaded', () => {
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-  // map.setZoom(18);
-
   // Add the geolocation functionality after the map is initialized
   map
     .locate({ setView: true, maxZoom: 16 })
@@ -21,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let radius = e.accuracy;
     let marker = L.marker(e.latlng).addTo(map);
     marker.bindPopup(
-      `You are within ${Math.round(radius)} meters from this point`
+      `A sua distância a partir deste ponto é de ${Math.round(radius)} metros.`
     );
 
     L.circle(e.latlng, radius).addTo(map);
