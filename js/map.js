@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Add the geolocation functionality after the map is initialized
   map
-    .locate({ setView: true, maxZoom: 19 })
+    .locate({ setView: true, maxZoom: 16 })
     .on('locationfound', onLocationFound);
 
   // onLocationFound callback
