@@ -6,7 +6,7 @@ function getLocation() {
   }
 }
 
-function showPosition(position) {
+export function showPosition(position) {
   console.log(
     'Latitude: ' +
       position.coords.latitude +
