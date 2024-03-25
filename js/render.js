@@ -1,5 +1,4 @@
-// Importar a função getWeatherForecast do arquivo '/js/api.js'
-console.log('teste');
+// Importar a função getWeatherForecast do arquivo './api.js'
 import { getWeatherForecast } from './api.js';
 
 const latitude = -22.674835987730578;

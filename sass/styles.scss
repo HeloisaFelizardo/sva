@@ -175,6 +175,7 @@ footer {
   a,
   p {
     font-size: 12px;
+    text-align: center;
   }
   a {
     text-decoration: none;
@@ -183,33 +184,6 @@ footer {
     text-decoration: underline;
   }
 }
-
-/* Ajuste de layout para telas menores */
-/* @media screen and (max-width: 406px) {
-  th,
-  td {
-    font-size: 14px;
-  }
-  .container {
-    padding: 0;
-  }
-  header {
-    ul {
-      li {
-        font-size: 18px;
-      }
-    }
-    display: ruby;
-    height: auto;
-  }
-  .intro {
-    padding-top: 0px;
-    h1 {
-      font-size: 30px;
-      margin: 10px 0;
-    }
-  }
-} */
 
 @media screen and (max-width: 600px) {
   th,
@@ -238,6 +212,12 @@ footer {
     }
     p {
       padding: 20px 0;
+    }
+  }
+  .mapa {
+    #map {
+      width: 85%;
+      height: 400px;
     }
   }
   .extreme,

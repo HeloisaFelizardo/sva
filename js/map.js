@@ -1,66 +1,61 @@
-let map = L.map('map').setView([-22.674835987730578, -42.007107264842624], 19);
-//let map = L.map('map');
-//map.setZoom(18);
-//map.locate({ setView: true, maxZoom: 16 });
+// Make sure that the map is initialized and available
+let map;
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  attribution:
-    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-}).addTo(map);
+document.addEventListener('DOMContentLoaded', () => {
+  map = L.map('map').setView([-22.674835987730578, -42.007107264842624], 20);
 
-function onLocationFound(e) {
-  var radius = e.accuracy;
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
 
-  L.marker(e.latlng)
-    .addTo(map)
-    .bindPopup('You are within ' + radius + ' meters from this point')
-    .openPopup();
+  // map.setZoom(18);
 
-  L.circle(e.latlng, radius).addTo(map);
-}
+  // Add the geolocation functionality after the map is initialized
+  map
+    .locate({ setView: true, maxZoom: 20 })
+    .on('locationfound', onLocationFound);
 
-map.on('locationfound', onLocationFound);
+  // onLocationFound callback
+  function onLocationFound(e) {
+    let radius = e.accuracy;
+    let marker = L.marker(e.latlng).addTo(map);
+    marker.bindPopup(
+      `You are within ${Math.round(radius)} meters from this point`
+    );
 
-let alertIcon = L.icon({
-  iconUrl: 'images/icons/danger.gif',
+    L.circle(e.latlng, radius).addTo(map);
+  }
 
-  iconSize: [40, 40], // size of the icon
-  iconAnchor: [20, 20], // point of the icon which will correspond to marker's location
-  shadowAnchor: [4, 62], // the same for the shadow
-  popupAnchor: [-1, -5], // point from which the popup should open relative to the iconAnchor
+  function onLocationError(e) {
+    alert(e.message);
+  }
+
+  map.on('locationerror', onLocationError);
+
+  // Add custom markers and alerts
+  const alertIcon = L.icon({
+    iconUrl: 'images/icons/danger.gif',
+    iconSize: [40, 40],
+    iconAnchor: [20, 20],
+    shadowAnchor: [4, 62],
+    popupAnchor: [-1, -5],
+  });
+
+  const alerts = [
+    [-22.675293143113894, -42.003851511102056],
+    [-22.675782022019927, -42.00718137860491],
+    [-22.675285692285698, -42.00755823359581],
+    [-22.66089393783962, -42.01120482145359],
+    [-22.651438269225444, -42.012323008299965],
+    [-22.669893116927966, -42.002593529195785],
+    [-22.674835987730578, -42.007107264842624],
+  ];
+
+  alerts.forEach(coord => {
+    L.marker(coord, { icon: alertIcon })
+      .addTo(map)
+      .bindPopup('Ponto de alagamento')
+      .openPopup();
+  });
 });
-
-L.marker([-22.675293143113894, -42.003851511102056], { icon: alertIcon })
-  .addTo(map)
-  .bindPopup('Ponto de alagamento')
-  .openPopup();
-
-L.marker([-22.675782022019927, -42.00718137860491], { icon: alertIcon })
-  .addTo(map)
-  .bindPopup('Ponto de alagamento')
-  .openPopup();
-
-L.marker([-22.675285692285698, -42.00755823359581], { icon: alertIcon })
-  .addTo(map)
-  .bindPopup('Ponto de alagamento')
-  .openPopup();
-
-L.marker([-22.66089393783962, -42.01120482145359], { icon: alertIcon })
-  .addTo(map)
-  .bindPopup('Ponto de alagamento')
-  .openPopup();
-
-L.marker([-22.651438269225444, -42.012323008299965], { icon: alertIcon })
-  .addTo(map)
-  .bindPopup('Ponto de alagamento')
-  .openPopup();
-
-L.marker([-22.669893116927966, -42.002593529195785], { icon: alertIcon })
-  .addTo(map)
-  .bindPopup('Ponto de alagamento')
-  .openPopup();
-
-L.marker([-22.674835987730578, -42.007107264842624])
-  .addTo(map)
-  .bindPopup('Você está aqui')
-  .openPopup();
