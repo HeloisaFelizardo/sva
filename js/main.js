@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <th>Local</th>
             <th>Hora</th>
             <th>Status</th>
-            <th>Chuva (1h)</th>
+            <th>Chuva prevista na próxima hora</th>
             <th>Chuva (3h)</th>
           </tr>
         </thead>
@@ -54,9 +54,15 @@ document.addEventListener('DOMContentLoaded', () => {
               })}</td>
               <td><img src="https://openweathermap.org/img/wn/${
                 item.icon
-              }@2x.png" alt=""></td>
-              <td>${item.rain_1h ? item.rain_1h + 'mm' : '-'}</td>
-              <td>${item.rain_3h ? item.rain_3h + 'mm' : '-'}</td>
+              }@2x.png" alt="${data.weather[0].description}" title="${
+                  data.weather[0].description
+                }"></td>
+              <td title = 'Chuva prevista na próxima hora.'>${
+                data.rain && data.rain['1h'] ? data.rain['1h'] + 'mm' : '-'
+              }</td>
+              <td>${
+                data.rain && data.rain['3h'] ? data.rain['3h'] + 'mm' : '-'
+              }</td>
             </tr>
           `
             )
@@ -65,8 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
       `;
       document.querySelector('.clima').innerHTML = `
         <ul>
-          <li>${data.name}</li>
-          <li>${Math.ceil(data.main.temp)}º C</li>
+          <li title = "Local">${data.name}</li>
+          <li title = "Temperatura atual">${Math.ceil(data.main.temp)}º C</li>
           <li>
             <img src="https://openweathermap.org/img/wn/${
               data.weather[0].icon
@@ -81,7 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
           </li>
         </ul>
       `;
-      if (data.rain && data.weather.some(item => item.rain_1h > 0.88)) {
+      if (data.rain && data.rain['1h'] > 0.88) {
+        console.log('Chuva prevista na próxima hora.');
         document
           .querySelectorAll('.alert')
           .forEach(alert => (alert.style.display = 'block'));
